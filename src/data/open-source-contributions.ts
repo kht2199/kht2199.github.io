@@ -63,22 +63,4 @@ export const openSourceContributions: ContributionItem[] = [
     date: '2026-03-05',
     summary: '문서화되지 않은 렌더링 동작을 이슈로 정리해 문제 인식과 후속 수정으로 연결했습니다.',
   },
-  {
-    type: 'PR',
-    title: "Add 'Seoul Forest' kujira operator",
-    repo: 'eco-stake/validator-registry',
-    url: 'https://github.com/eco-stake/validator-registry/pull/868',
-    state: 'Merged',
-    date: '2022-08-31',
-    summary: 'Kujira 생태계 운영자 등록 정보를 기여해 실제 네트워크 운영 경험을 오픈소스에 반영했습니다.',
-  },
-  {
-    type: 'PR',
-    title: 'Update run-a-node.md',
-    repo: 'Team-Kujira/docs',
-    url: 'https://github.com/Team-Kujira/docs/pull/8',
-    state: 'Merged',
-    date: '2022-05-26',
-    summary: '노드 운영 문서를 개선해 다른 개발자와 운영자가 더 쉽게 참고할 수 있도록 했습니다.',
-  },
 ]
