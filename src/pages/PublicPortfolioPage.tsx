@@ -1,9 +1,9 @@
-import { ArrowUpRight, Globe2, Mail, MapPin, RefreshCcw, Settings2, Sparkles } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowUpRight, BriefcaseBusiness, Globe2, Mail, MapPin, RefreshCcw, Sparkles } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { openSourceContributions } from '@/data/open-source-contributions'
 import { getGitHubData, getProfileContent, getProjects } from '@/lib/content'
 
 const profile = getProfileContent()
@@ -42,7 +42,7 @@ export function PublicPortfolioPage() {
               <div className="space-y-3">
                 <Badge className="w-fit" variant="default">
                   <Sparkles className="mr-1 size-3.5" />
-                  Avatar-first portfolio
+                  Resume-ready portfolio
                 </Badge>
                 <CardDescription className="text-base text-slate-300">{profile.headline}</CardDescription>
                 <p className="text-sm leading-6 text-slate-400">{profile.status}</p>
@@ -51,7 +51,8 @@ export function PublicPortfolioPage() {
                 <a href="#about" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">About</a>
                 <a href="#projects" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">Featured Projects</a>
                 <a href="#details" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">Project Details</a>
-                <a href="#workflow" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">Content Workflow</a>
+                <a href="#oss" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">Open Source</a>
+                <a href="#workflow" className="rounded-full px-3 py-2 transition hover:bg-white/5 hover:text-white">Career Snapshot</a>
               </nav>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -69,11 +70,6 @@ export function PublicPortfolioPage() {
                   </a>
                 ))}
               </div>
-              <Separator />
-              <Link to="/admin" className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-cyan-200">
-                <Settings2 className="size-4" />
-                관리자 페이지로 이동
-              </Link>
             </CardContent>
           </Card>
         </aside>
@@ -82,25 +78,24 @@ export function PublicPortfolioPage() {
           <section className="grid gap-6 xl:grid-cols-[1.3fr_0.9fr]">
             <Card className="bg-slate-950/65">
               <CardHeader>
-                <Badge className="w-fit" variant="muted">TypeScript · Vite · shadcn/ui</Badge>
+                <Badge className="w-fit" variant="muted">Full-stack · TypeScript · Product Engineering</Badge>
                 <CardTitle className="max-w-3xl text-4xl leading-tight md:text-5xl">
-                  Markdown으로 소개를 관리하고 GitHub에서 최신 이력을 다시 불러오는 개발자 홈페이지
+                  제품 맥락을 이해하고 실제 운영 가능한 결과물까지 연결하는 풀스택 개발자
                 </CardTitle>
                 <CardDescription className="max-w-2xl text-base text-slate-300">
-                  공개 페이지는 방문자에게 포트폴리오를 보여주고, 관리자 페이지는 GitHub 연결과 콘텐츠 수정 포인트를 관리하도록 분리했습니다.
+                  AMOS 관련 프로젝트를 중심으로, 프론트엔드 구현부터 백엔드 연동·운영 자동화·오픈소스 기여까지 이어온 작업을 정리한 개발자 홈페이지입니다.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-3">
-                <a href="#workflow"><Button size="lg">운영 방식 보기</Button></a>
-                <a href="#details"><Button variant="secondary" size="lg">프로젝트 상세 보기</Button></a>
-                <Link to="/admin"><Button variant="ghost" size="lg">관리자 화면</Button></Link>
+                <a href="#workflow"><Button size="lg">경력 요약 보기</Button></a>
+                <a href="#oss"><Button variant="secondary" size="lg">오픈소스 기여 보기</Button></a>
               </CardContent>
             </Card>
 
             <Card className="bg-slate-950/65">
               <CardHeader>
-                <CardTitle className="text-2xl">GitHub Sync Snapshot</CardTitle>
-                <CardDescription>profile.md와 projects/*.md의 repo 정보를 바탕으로 최신 상태를 다시 가져옵니다.</CardDescription>
+                <CardTitle className="text-2xl">Career Snapshot</CardTitle>
+                <CardDescription>GitHub 활동과 문서 기반 포트폴리오 운영 방식을 함께 반영한 현재 상태 요약입니다.</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -116,21 +111,30 @@ export function PublicPortfolioPage() {
                   <p className="mt-2 text-xl font-semibold text-white">{github.profile.repos}</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Sync Command</p>
-                  <p className="mt-2 font-mono text-sm text-cyan-200">pnpm sync:github</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Open Source</p>
+                  <p className="mt-2 font-mono text-sm text-cyan-200">PR · Issue · Docs · DX</p>
                 </div>
               </CardContent>
             </Card>
           </section>
 
-          <section id="about">
+          <section id="about" className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
             <Card>
               <CardHeader>
                 <CardTitle>About</CardTitle>
-                <CardDescription>이 영역은 src/content/site/profile.md 의 내용을 기반으로 렌더링됩니다.</CardDescription>
+                <CardDescription>제품 이해, 구현 품질, 운영 가능성을 함께 고려하는 개발 방식에 대해 소개합니다.</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="prose prose-invert max-w-none prose-p:text-slate-300 prose-li:text-slate-300 prose-strong:text-white" dangerouslySetInnerHTML={{ __html: profile.aboutHtml }} />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Strengths</CardTitle>
+                <CardDescription>실무에서 드러나는 핵심 강점입니다.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="prose prose-invert max-w-none prose-p:text-slate-300 prose-li:text-slate-300 prose-strong:text-white" dangerouslySetInnerHTML={{ __html: profile.strengthsHtml }} />
               </CardContent>
             </Card>
           </section>
@@ -141,7 +145,7 @@ export function PublicPortfolioPage() {
                 <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Featured</p>
                 <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">선별한 프로젝트</h2>
               </div>
-              <p className="max-w-xl text-sm leading-6 text-slate-400">공개 페이지에서는 결과물과 스토리를 보여주고, 운영용 수정 포인트는 관리자 화면으로 분리했습니다.</p>
+              <p className="max-w-xl text-sm leading-6 text-slate-400">대표 프로젝트, 구현 맥락, 최신 커밋 흐름까지 한 화면에서 볼 수 있도록 구성했습니다.</p>
             </div>
             <div className="grid gap-4 xl:grid-cols-2">
               {projects.filter((project) => project.featured).map((project) => {
@@ -245,7 +249,7 @@ export function PublicPortfolioPage() {
                           </div>
                         ) : (
                           <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-slate-400">
-                            아직 동기화된 GitHub 커밋이 없습니다. 관리자 화면에서 repo 값을 설정한 뒤 `pnpm sync:github`를 실행하세요.
+                            아직 동기화된 GitHub 커밋이 없습니다. 프로젝트의 repo 값을 확인한 뒤 `pnpm sync:github`를 실행하세요.
                           </div>
                         )}
                       </div>
@@ -256,23 +260,56 @@ export function PublicPortfolioPage() {
             </div>
           </section>
 
+          <section id="oss" className="space-y-4">
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Open Source</p>
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">PR과 Issue로 남긴 기여</h2>
+              </div>
+              <p className="max-w-xl text-sm leading-6 text-slate-400">문제 재현, 원인 정리, 수정 제안까지 연결한 최근 오픈소스 기여를 추려서 보여줍니다.</p>
+            </div>
+            <div className="grid gap-4 xl:grid-cols-2">
+              {openSourceContributions.map((item) => (
+                <Card key={item.url} className="transition hover:border-cyan-300/30">
+                  <CardHeader>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge>{item.type}</Badge>
+                      <Badge variant="muted">{item.repo}</Badge>
+                      <Badge variant="muted">{item.state}</Badge>
+                    </div>
+                    <CardTitle className="text-xl leading-snug">{item.title}</CardTitle>
+                    <CardDescription className="text-slate-300">{item.summary}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex items-center justify-between gap-3">
+                    <div className="text-sm text-slate-400">{item.date}</div>
+                    <a href={item.url} target="_blank" rel="noreferrer"><Button variant="secondary">GitHub에서 보기 <ArrowUpRight className="size-4" /></Button></a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
           <section id="workflow">
             <Card>
               <CardHeader>
-                <CardTitle>Content-first workflow</CardTitle>
-                <CardDescription>소개와 프로젝트 설명은 Markdown, GitHub 메타데이터는 동기화 스크립트로 관리합니다.</CardDescription>
+                <CardTitle>Career Snapshot</CardTitle>
+                <CardDescription>프로젝트 경험과 협업 스타일을 짧게 요약했습니다.</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-6 xl:grid-cols-[1fr_0.8fr]">
                 <div className="prose prose-invert max-w-none prose-p:text-slate-300 prose-li:text-slate-300" dangerouslySetInnerHTML={{ __html: profile.workflowHtml }} />
-                <div className="rounded-3xl border border-cyan-300/15 bg-cyan-300/5 p-5">
-                  <p className="text-sm uppercase tracking-[0.24em] text-cyan-200">Quick edit points</p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
-                    <li><span className="font-semibold text-white">소개 수정</span> — src/content/site/profile.md</li>
-                    <li><span className="font-semibold text-white">프로젝트 추가</span> — src/content/projects/*.md</li>
-                    <li><span className="font-semibold text-white">GitHub 재동기화</span> — pnpm sync:github</li>
-                    <li><span className="font-semibold text-white">타입스크립트 기본</span> — 전체 앱/스크립트는 TS 중심 구조를 유지</li>
-                    <li><span className="font-semibold text-white">운영 화면 분리</span> — /admin 경로에서 설정 흐름 확인</li>
-                  </ul>
+                <div className="space-y-4">
+                  <div className="rounded-3xl border border-cyan-300/15 bg-cyan-300/5 p-5">
+                    <p className="text-sm uppercase tracking-[0.24em] text-cyan-200">Collaboration</p>
+                    <div className="mt-4 prose prose-invert max-w-none prose-p:text-slate-300 prose-li:text-slate-300" dangerouslySetInnerHTML={{ __html: profile.collaborationHtml }} />
+                  </div>
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                    <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Highlights</p>
+                    <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+                      <li className="flex gap-3"><BriefcaseBusiness className="mt-1 size-4 shrink-0 text-cyan-200" />AMOS 관련 프로젝트 중심의 실무 경험 정리</li>
+                      <li className="flex gap-3"><BriefcaseBusiness className="mt-1 size-4 shrink-0 text-cyan-200" />프론트엔드, 백엔드 연동, 운영 자동화를 함께 다루는 풀스택 관점</li>
+                      <li className="flex gap-3"><BriefcaseBusiness className="mt-1 size-4 shrink-0 text-cyan-200" />PR/Issue 기반의 오픈소스 문제 해결과 DX 개선 경험</li>
+                    </ul>
+                  </div>
                 </div>
               </CardContent>
             </Card>

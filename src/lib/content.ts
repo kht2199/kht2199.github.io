@@ -20,6 +20,8 @@ export interface ProfileContent {
   heroTags: string[]
   socials: SocialLink[]
   aboutHtml: string
+  strengthsHtml: string
+  collaborationHtml: string
   workflowHtml: string
   rawMarkdown: string
 }
@@ -166,7 +168,9 @@ export function getProfileContent(): ProfileContent {
     heroTags: splitCsv(data.heroTags),
     socials: buildSocials(data),
     aboutHtml: markdownToHtml(extractSection(body, 'About') || body),
-    workflowHtml: markdownToHtml(extractSection(body, 'Workflow')),
+    strengthsHtml: markdownToHtml(extractSection(body, 'Strengths')),
+    collaborationHtml: markdownToHtml(extractSection(body, 'Collaboration')),
+    workflowHtml: markdownToHtml(extractSection(body, 'Career Snapshot')),
     rawMarkdown: body,
   }
 }
