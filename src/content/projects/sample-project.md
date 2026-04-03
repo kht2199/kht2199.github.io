@@ -1,21 +1,27 @@
 ---
-title: Sample Product Case Study
-summary: 실제 프로젝트를 연결하기 전 구조를 테스트하기 위한 샘플 항목.
-repo: your-github-username/sample-project
+title: AMOS Frontend
+summary: AMOS 사용자가 직접 마주하는 화면과 제품 경험을 담당하는 프론트엔드 애플리케이션입니다.
+repo: kht2199/amos-frontend
 featured: true
 order: 2
-status: Ready for repo mapping
-period: 2025
-role: Frontend development, docs, release polish
-stack: TypeScript, React, REST API
-liveUrl: https://github.com/your-github-username/sample-project
+status: 운영 중인 사용자 서비스
+period: 2026
+role: 프론트엔드 아키텍처 설계, UI 구현, UX 개선
+stack: TypeScript, React, Frontend Architecture, Design Systems, Product UX
+liveUrl: https://github.com/kht2199/amos-frontend
 ---
-## Context
+## 프로젝트 개요
 
-이 샘플 항목은 실제 GitHub 저장소를 연결하기 전에 상세 레이아웃과 커밋 영역이 어떻게 보일지 확인하기 위한 템플릿입니다.
+AMOS Frontend는 실제 사용자가 접하는 주요 화면을 담당하는 프로젝트입니다. 빠르게 기능을 붙이는 것보다, 사용자 흐름이 자연스럽고 이후 변경에도 대응하기 쉬운 구조를 만드는 데 집중했습니다.
 
-## Replace this later
+## 담당한 역할
 
-- `repo`를 실제 `owner/repo` 값으로 바꾸세요.
-- 본문 내용을 프로젝트 배경, 구현 포인트, 성과 중심으로 수정하세요.
-- 필요하면 파일을 복제해 프로젝트를 추가하세요.
+- 제품 흐름에 맞춘 화면 구조와 정보 계층 정리
+- 유지보수 가능한 컴포넌트 단위와 프론트엔드 구조 설계
+- 잦은 요구사항 변경에도 대응할 수 있도록 개발 기반 정비
+
+## 주요 포인트
+
+- 사용자 경험이 직접 드러나는 핵심 레이어
+- 제품 완성도와 팀 생산성에 동시에 영향을 주는 프론트엔드 구조 개선
+- 반복적인 개선 흐름을 GitHub 커밋 타임라인으로 함께 확인 가능

@@ -21,7 +21,6 @@ pnpm dev
 ## 라우트
 
 - `/` — 방문자용 공개 포트폴리오 페이지
-- `/admin` — 운영/설정용 관리자 페이지
 
 ## 수정 포인트
 
@@ -70,7 +69,7 @@ pnpm sync:github
 2. `pnpm build:pages` 로 정적 파일을 `docs/`에 생성
 3. GitHub 저장소 Settings → Pages 에서 Source를 `Deploy from a branch` / Branch를 `main` / Folder를 `/docs`로 선택
 4. 배포 주소는 `https://kht2199.github.io/`
-5. `/admin` 같은 SPA 라우트도 `404.html` fallback으로 동작
+5. SPA 라우트는 `404.html` fallback으로 동작
 
 ## 폴더 구조
 

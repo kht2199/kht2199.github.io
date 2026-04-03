@@ -1,11 +1,150 @@
 {
-  "generatedAt": "2026-04-03T02:01:48.888Z",
+  "generatedAt": "2026-04-03T09:55:33.469Z",
   "profile": {
-    "username": "your-github-username",
-    "repos": 0,
-    "followers": 0,
-    "following": 0,
-    "htmlUrl": "https://github.com/your-github-username"
+    "username": "kht2199",
+    "repos": 2,
+    "followers": 6,
+    "following": 22,
+    "htmlUrl": "https://github.com/kht2199"
   },
-  "projects": {}
+  "projects": {
+    "amos-infra": {
+      "repo": "kht2199/amos-infra",
+      "description": "",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-04-03T08:54:30Z",
+      "homepage": "https://github.com/kht2199/amos-infra",
+      "commits": [
+        {
+          "sha": "72d71c40371c2f260ddafa0c4b14f7ac28f47eaa",
+          "message": "refactor: merge jenkins-jobs/templates into roles/jenkins/templates\n\nMoved job_*.xml.j2 templates into the role and updated src path.\nRemoved now-empty jenkins-jobs directory.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-02T07:23:31Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/72d71c40371c2f260ddafa0c4b14f7ac28f47eaa"
+        },
+        {
+          "sha": "69b3169b1adce169b5931d82541580104ff3a80a",
+          "message": "chore: remove jenkins-jobs unused files and update README\n\n- Removed deploy.py, requirements.txt, docker-compose.test.yml, scripts/\n- Removed deploy_*.sh.j2 templates (managed by roles/jenkins instead)\n- Removed jobs.yml and README.md (only used by deploy.py)\n- Updated README with correct --limit hosts and available tags per role\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-02T07:17:38Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/69b3169b1adce169b5931d82541580104ff3a80a"
+        },
+        {
+          "sha": "69e5bc0d61fea381f2fbac8ed24844c7c7d49b35",
+          "message": "fix: update LFS tracking paths for binary files moved to files/\n\nChanged from roles/*/files/ paths to files/ after directory restructure.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-02T06:51:53Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/69e5bc0d61fea381f2fbac8ed24844c7c7d49b35"
+        },
+        {
+          "sha": "5c07906eb9fccc43b745ac77688e2c3b24a7ad52",
+          "message": "feat: add HTTP health check and journalctl log output in deploy_app.sh\n\nAfter systemctl restart, poll /api/swagger-ui/index.html (max 30 retries, 3s interval).\nPrint journalctl -n 100 output to Jenkins console on every deploy regardless of result.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-02T06:49:51Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/5c07906eb9fccc43b745ac77688e2c3b24a7ad52"
+        },
+        {
+          "sha": "81431ce1cd7e1a380df862bd449f1ec536591daf",
+          "message": "refactor: move grafana/loki/promtail binary files to top-level files/\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-03-27T08:00:20Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/81431ce1cd7e1a380df862bd449f1ec536591daf"
+        },
+        {
+          "sha": "ffcb5d8f3d725a99701e7ea2430d4c60c63841f4",
+          "message": "feat: add venv creation and pip install from packages dir in deploy_llm.sh\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-03-27T07:53:02Z",
+          "url": "https://github.com/kht2199/amos-infra/commit/ffcb5d8f3d725a99701e7ea2430d4c60c63841f4"
+        }
+      ]
+    },
+    "portfolio-site": {
+      "repo": "kht2199/amos-agent",
+      "description": "",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-04-03T08:53:49Z",
+      "homepage": "https://github.com/kht2199/amos-agent",
+      "commits": [
+        {
+          "sha": "9f1fb98c3ca7ab544c3977504b46d9709065273a",
+          "message": "feat: migrate agents to langchain.agents.create_agent and fix test mocking\n\n- Replace deprecated create_react_agent with langchain.agents.create_agent in all 6 agents\n- Add get_llm_no_think() for supervisor structured output (thinking disabled via extra_body)\n- Fix test_agents.py: replace @respx.mock with unittest.mock.patch on httpx directly\n  (respx intercepts openai SDK's httpx calls, returning empty response for unmatched routes)\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T08:10:11Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/9f1fb98c3ca7ab544c3977504b46d9709065273a"
+        },
+        {
+          "sha": "c6fd14ec68fc10ad514b4ab93aad115589f80318",
+          "message": "test: isolate tests from external services and remove sensitive data exposure\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T06:53:36Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/c6fd14ec68fc10ad514b4ab93aad115589f80318"
+        },
+        {
+          "sha": "55905096cd8f9850f47719a657703d645bd48e69",
+          "message": "test: read LLM_BASE_URL from env instead of hardcoding in tests\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T06:51:58Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/55905096cd8f9850f47719a657703d645bd48e69"
+        },
+        {
+          "sha": "77d90256bcef13b81d10a25455c333ca7901dec4",
+          "message": "chore: add venv/ to .gitignore\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T06:50:39Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/77d90256bcef13b81d10a25455c333ca7901dec4"
+        },
+        {
+          "sha": "1527135f19ccd17c16af0aeec4d22981eef4cdd7",
+          "message": "feat: resolve LLM model from server at runtime, fail fast if unavailable\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T06:50:39Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/1527135f19ccd17c16af0aeec4d22981eef4cdd7"
+        },
+        {
+          "sha": "9b2cf701d9fc982450b681060f7bc4682b03ea3e",
+          "message": "fix: use Python 3.11 compatible deps and remove load_dotenv from config\n\n- Relax langchain/langgraph version pins to resolve dependency conflict\n- Remove load_dotenv() from config.py (handled by conftest.py)\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\n\nfix: update requirements to match actual installed versions (Python 3.11)\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+          "date": "2026-04-03T06:25:48Z",
+          "url": "https://github.com/kht2199/amos-agent/commit/9b2cf701d9fc982450b681060f7bc4682b03ea3e"
+        }
+      ]
+    },
+    "sample-project": {
+      "repo": "kht2199/amos-frontend",
+      "description": "",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-04-03T08:53:50Z",
+      "homepage": "https://github.com/kht2199/amos-frontend",
+      "commits": [
+        {
+          "sha": "93434e963c6372985ebe7503cb5e9c4ab8b23d1c",
+          "message": "chore: sass 패키지 추가 (SCSS 지원)",
+          "date": "2026-03-24T07:49:00Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/93434e963c6372985ebe7503cb5e9c4ab8b23d1c"
+        },
+        {
+          "sha": "7b60c2781594444a8a5db0fdbbb0942941c5853b",
+          "message": "chore: VITE_USE_MOCK 환경변수 추가 (빌드 시 mock 활성화)",
+          "date": "2026-03-23T07:55:22Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/7b60c2781594444a8a5db0fdbbb0942941c5853b"
+        },
+        {
+          "sha": "06c2d8630540a95d4326bbbe3822064bde594fb4",
+          "message": "feat: 3D 씬 sky 배경 텍스처 적용 및 우클릭 pan 비활성화",
+          "date": "2026-03-23T07:33:25Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/06c2d8630540a95d4326bbbe3822064bde594fb4"
+        },
+        {
+          "sha": "9f19df5f3739ee3932781bb7fd1b2eed09c9a842",
+          "message": "feat: mock 데이터 자동화 (kubb 연동, 엔드포인트 동기화, handlers.ts 자동 생성)",
+          "date": "2026-03-20T04:54:28Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/9f19df5f3739ee3932781bb7fd1b2eed09c9a842"
+        },
+        {
+          "sha": "ff8ffc46e2e0d6edd618525b3e6a1c2da27891eb",
+          "message": "chore: tsconfig 주석 제거, 미사용 파일 삭제",
+          "date": "2026-03-20T01:44:20Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/ff8ffc46e2e0d6edd618525b3e6a1c2da27891eb"
+        },
+        {
+          "sha": "04e32e04b9dad65e3603cec424d08e2b681604ea",
+          "message": "refactor: 인라인 스타일을 CSS 클래스로 분리",
+          "date": "2026-03-19T01:05:56Z",
+          "url": "https://github.com/kht2199/amos-frontend/commit/04e32e04b9dad65e3603cec424d08e2b681604ea"
+        }
+      ]
+    }
+  }
 }

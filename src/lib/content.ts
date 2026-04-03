@@ -198,6 +198,10 @@ export function getProjects(): ProjectContent[] {
     .sort((left, right) => left.order - right.order)
 }
 
+export function getProjectBySlug(slug: string): ProjectContent | undefined {
+  return getProjects().find((project) => project.slug === slug)
+}
+
 export function getGitHubData(): GitHubDataShape {
   return githubData as GitHubDataShape
 }

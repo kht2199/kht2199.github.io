@@ -1,28 +1,27 @@
 ---
-title: Developer Portfolio Platform
-summary: MD 기반 소개 관리와 GitHub 재동기화를 지원하는 다크 모드 포트폴리오.
-repo: your-github-username/dev-portfolio
+title: AMOS Agent
+summary: AMOS 서비스에서 자동화 작업과 에이전트 실행 흐름을 담당하는 핵심 프로젝트입니다.
+repo: kht2199/amos-agent
 featured: true
 order: 1
-status: In Progress
+status: 운영 중인 핵심 프로젝트
 period: 2026
-role: Product design, frontend architecture, content workflow
-stack: TypeScript, React, Vite, shadcn/ui, Tailwind CSS, GitHub API
-liveUrl: https://example.com
+role: AI 워크플로우 설계, 에이전트 오케스트레이션, 제품 개선
+stack: TypeScript, AI Agents, Automation, GitHub API, Product Engineering
+liveUrl: https://github.com/kht2199/amos-agent
 ---
-## Overview
+## 프로젝트 개요
 
-이 프로젝트는 단순한 포트폴리오 페이지가 아니라, 소개와 프로젝트 내용을 Markdown으로 업데이트하고 GitHub에서 최신 커밋을 재수집할 수 있는 운영형 포트폴리오입니다.
+AMOS Agent는 서비스 운영에 필요한 자동화 작업과 AI 에이전트 실행 흐름을 담당하는 프로젝트입니다. 단순한 실험용 도구가 아니라 실제 운영 맥락에서 반복적으로 사용될 수 있도록 구조를 다듬는 데 집중했습니다.
 
-## Why this exists
+## 담당한 역할
 
-- 소개 문구를 코드가 아닌 콘텐츠 파일에서 바로 수정하기 위해
-- 프로젝트 상세 설명과 저장소 연결 정보를 분리해서 관리하기 위해
-- GitHub 이력 기반으로 "무엇을 만들었는지"뿐 아니라 "어떻게 발전시켰는지"까지 보여주기 위해
+- 운영 환경에 맞는 에이전트 실행 플로우 설계
+- 반복 작업을 줄이기 위한 자동화 구조 정리
+- 기능 추가보다 유지보수성과 확장성을 우선한 모듈 구조 설계
 
-## Highlights
+## 주요 포인트
 
-- TypeScript 기본 구성
-- 실물 사진 대신 아바타 기반 히어로
-- 프로젝트 상세 섹션 + 최근 커밋 타임라인
-- `pnpm sync:github`로 다시 불러오는 GitHub 메타데이터
+- 운영형 AI 에이전트 워크플로우를 기준으로 설계한 프로젝트
+- 이후 기능 확장을 고려해 구조를 모듈 단위로 정리
+- GitHub 동기화를 통해 최근 변경 흐름까지 함께 보여줄 수 있도록 구성

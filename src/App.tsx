@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { AdminPage } from '@/pages/AdminPage'
+import { ProjectDetailPage } from '@/pages/ProjectDetailPage'
 import { PublicPortfolioPage } from '@/pages/PublicPortfolioPage'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<PublicPortfolioPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
