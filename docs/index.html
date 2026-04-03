@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      ;(() => {
+        const params = new URLSearchParams(window.location.search)
+        const path = params.get('p')
+        if (!path) return
+
+        const query = params.get('q')
+        const nextUrl = `${window.location.pathname}${path}${query ? `?${query.replace(/~and~/g, '&')}` : ''}${window.location.hash}`
+        window.history.replaceState(null, '', nextUrl)
+      })()
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev-portfolio</title>
+    <script type="module" crossorigin src="/assets/index-CIa75OAB.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C8Tm4qYZ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

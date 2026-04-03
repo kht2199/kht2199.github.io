@@ -67,10 +67,10 @@ pnpm sync:github
 이 설정은 사용자 루트 사이트(`kht2199.github.io`) 기준입니다.
 
 1. 저장소를 `kht2199.github.io` 이름으로 GitHub에 push
-2. GitHub 저장소 Settings → Pages 에서 Source를 `GitHub Actions`로 선택
-3. `main` 브랜치에 push 하면 `.github/workflows/deploy-pages.yml`가 자동 배포
+2. `pnpm build:pages` 로 정적 파일을 `docs/`에 생성
+3. GitHub 저장소 Settings → Pages 에서 Source를 `Deploy from a branch` / Branch를 `main` / Folder를 `/docs`로 선택
 4. 배포 주소는 `https://kht2199.github.io/`
-5. `/admin` 같은 SPA 라우트도 `public/404.html` fallback으로 동작
+5. `/admin` 같은 SPA 라우트도 `404.html` fallback으로 동작
 
 ## 폴더 구조
 
