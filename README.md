@@ -76,6 +76,9 @@ pnpm sync:github
 - `src/content/site/profile.md` — 자기소개/워크플로우
 - `src/content/projects/*.md` — 프로젝트 설명 + repo 연결
 - `src/data/generated/github-data.json` — 동기화된 GitHub 메타데이터 결과물
+- `public/notes/taek-career-ontology.yaml` — 공개용 커리어 온톨로지
+- `public/notes/taek-career-memo.md` — 공개용 자기이해/포트폴리오 메모
+- external repo: `https://github.com/kht2199/obsidian-memory-vault` — 내부 큐레이션 원본 저장소
 - `scripts/sync-github.mjs` — GitHub 재동기화 스크립트
 
 ## 구현 메모
