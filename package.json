@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:sync": "pnpm sync:github && pnpm dev",
+    "dev:sync": "pnpm sync:all && pnpm dev",
     "build": "tsc -b && vite build",
     "build:pages": "node scripts/build-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync:github": "node scripts/sync-github.mjs"
+    "sync:github": "node scripts/sync-github.mjs",
+    "sync:notes": "node scripts/export-curated-notes.mjs",
+    "sync:all": "pnpm sync:github && pnpm sync:notes"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

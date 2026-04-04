@@ -91,7 +91,8 @@ export function PublicPortfolioPage() {
               <CardContent className="flex flex-wrap gap-3">
                 <a href="#projects"><Button size="lg">프로젝트 보기</Button></a>
                 <a href="#workflow"><Button variant="secondary" size="lg">경력 요약 보기</Button></a>
-                <a href="/notes/taek-career-ontology.yaml" target="_blank" rel="noreferrer"><Button variant="ghost" size="lg">커리어 온톨로지 보기</Button></a>
+                <Link to="/notes/career-ontology"><Button variant="ghost" size="lg">커리어 온톨로지 보기</Button></Link>
+                <a href="/notes/taek-career-memo.md" target="_blank" rel="noreferrer"><Button variant="ghost" size="lg">커리어 메모 보기</Button></a>
                 <a href="https://github.com/kht2199/obsidian-memory-vault" target="_blank" rel="noreferrer"><Button variant="ghost" size="lg">큐레이션 노트 레포 보기</Button></a>
               </CardContent>
             </Card>
@@ -99,7 +100,7 @@ export function PublicPortfolioPage() {
             <Card className="bg-slate-950/65">
               <CardHeader>
                 <CardTitle className="text-2xl">한눈에 보는 요약</CardTitle>
-                <CardDescription>현재 GitHub 활동, 포트폴리오 정보, 공개형 온톨로지 노트 접근 경로를 함께 보여줍니다.</CardDescription>
+                <CardDescription>현재 GitHub 활동, 포트폴리오 정보, 공개형 온톨로지/메모/큐레이션 노트 접근 경로를 함께 보여줍니다.</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">

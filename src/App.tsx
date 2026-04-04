@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { CareerOntologyPage } from '@/pages/CareerOntologyPage'
 import { ProjectDetailPage } from '@/pages/ProjectDetailPage'
 import { PublicPortfolioPage } from '@/pages/PublicPortfolioPage'
 
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PublicPortfolioPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+        <Route path="/notes/career-ontology" element={<CareerOntologyPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

@@ -14,13 +14,14 @@ TypeScript + React + Vite 기반의 개인 개발자 홈페이지입니다.
 
 ```bash
 pnpm install
-pnpm sync:github
+pnpm sync:all
 pnpm dev
 ```
 
 ## 라우트
 
 - `/` — 방문자용 공개 포트폴리오 페이지
+- `/notes/career-ontology` — 공개용 커리어 온톨로지 HTML 페이지
 
 ## 수정 포인트
 
@@ -62,7 +63,16 @@ pnpm sync:github
 선택 사항:
 - `GITHUB_TOKEN`을 설정하면 rate limit 완화에 도움이 됩니다.
 
-### 4) GitHub Pages 배포
+### 4) 공개 notes export 갱신
+```bash
+pnpm sync:notes
+```
+
+- 기본 source of truth: `/Users/htkim/Documents/Obsidian Vault`
+- 다른 경로를 쓰려면 `OBSIDIAN_VAULT_PATH` 환경변수를 설정
+- 생성 결과: `public/notes/*`
+
+### 5) GitHub Pages 배포
 이 설정은 사용자 루트 사이트(`kht2199.github.io`) 기준입니다.
 
 1. 저장소를 `kht2199.github.io` 이름으로 GitHub에 push
