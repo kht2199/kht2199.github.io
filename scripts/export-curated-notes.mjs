@@ -15,158 +15,148 @@ async function readVault(relativePath) {
   return fs.readFile(fullPath, 'utf8')
 }
 
-function indentBlock(text, spaces = 4) {
-  const prefix = ' '.repeat(spaces)
-  return text.split('\n').map((line) => `${prefix}${line}`).join('\n')
-}
-
-function buildYaml(topicBody, memoryBody) {
+function buildYaml() {
   return `identity:
   summary: AI를 활용해 낯선 도메인의 문제를 빠르게 구조화하고 구현까지 연결하는 실전형 엔지니어
   role: AI-Augmented Full-stack Engineer
 drivers:
-  growth_vs_profit: {growth: 60, profit: 40}
+  growth_vs_profit: { growth: 60, profit: 40 }
   priorities:
     - 빠른 성장
     - 다양한 경험
     - 실전 문제 해결
-preferences:
-  likes:
-    - 구조화
-    - 정확성
-    - 효율적인 패턴 선택
-    - 재사용 가능한 자동화
-  dislikes:
-    - UI 미세 수정 위주의 일
-    - 과한 아키텍처
-capabilities:
-  - 낯선 도메인 빠른 흡수
-  - 프론트엔드/백엔드/인프라 end-to-end 연결
-  - AI leverage 기반 초기 부트스트랩 가속
-  - 운영 가능한 구조로 복잡도 통제
-evidence:
-  - title: Ansible 기반 인프라 자동화
-    pattern: 상황-판단-구현-결과
-  - title: AI 기반 프로젝트 부트스트랩
-    pattern: SSE/WebSocket/Swagger/React hook/MSW 구성
-  - title: LangGraph agent 구조 설계
-    pattern: supervisor-agent, tool/API 연결, UI 스트리밍 상태 설계
+public_positioning:
+  headline: AI leverage와 end-to-end execution을 결합하는 문제 해결형 엔지니어
+  value:
+    - 낯선 도메인을 빠르게 구조화한다
+    - 프론트엔드·백엔드·인프라를 하나의 결과로 연결한다
+    - 구현 속도와 복잡도 통제를 함께 가져간다
+strengths:
+  - 빠른 학습과 구조화
+  - end-to-end 구현 연결 능력
+  - 재사용 가능한 자동화 선호
+  - 과한 설계보다 실전적인 균형 추구
+evidence_patterns:
+  - 상황 → 판단 → 구현 → 결과
+  - GitHub raw history를 해석된 evidence로 재작성
+representative_examples:
+  - Ansible 기반 인프라 자동화
+  - AI 기반 프로젝트 부트스트랩
+  - LangGraph agent 구조 설계
+collaboration_style:
+  - 문제를 먼저 구조화한 뒤 구현 방향을 정리한다
+  - 빠른 시도와 운영 가능한 구조 사이 균형을 맞춘다
+  - 재사용 가능한 패턴을 남긴다
 market_perception:
   strength: 일반 개발자로 보이기 쉬우나 실제 강점은 AI leverage + 구조화 + end-to-end 연결
   bottleneck:
     - 포트폴리오
     - 자기설명
     - 신뢰 신호
-portfolio_rules:
-  - 기술 나열보다 문제-판단-구현-결과 구조를 우선한다
-  - GitHub raw history를 해석된 evidence로 재작성한다
-  - AMOS 관련 프로젝트를 중심 축으로 배치한다
-decision_rules:
-  - 구조화가 되는 문제를 선호한다
-  - 복잡도 통제가 가능한 방향을 우선한다
-  - 단발 구현보다 재사용 가능한 흐름을 만든다
-next_actions:
-  - 주요 프로젝트를 evidence 카드로 재작성
-  - 자기설명 문구와 신뢰 신호를 계속 보강
+public_boundaries:
+  include:
+    - 공개 가능한 포지셔닝
+    - 협업 방식
+    - evidence 패턴
+    - 대표 사례 축
+  exclude:
+    - 내부 작업 로그
+    - 세션 원문
+    - 민감한 운영 맥락
 source_of_truth:
   vault_topic: 03-topics/career-ontology.md
   vault_memory: 05-memory/portfolio-ontology.md
-notes:
-  topic_excerpt: |
-${indentBlock(topicBody)}
-  memory_excerpt: |
-${indentBlock(memoryBody)}
 `
 }
 
-function buildMemo(topicBody, memoryBody) {
+function buildMemo() {
   return `# Taek Career Memo
 
-## 해석
-Taek은 AI를 활용해 낯선 도메인의 문제를 빠르게 구조화하고, 구현과 운영까지 연결하는 실전형 엔지니어에 가깝다. 단순히 여러 스택을 다룬다기보다, 제품 흐름 전체를 보고 병목을 제거하는 쪽에서 강점이 드러난다.
+## 한 문장 소개
+AI를 활용해 낯선 도메인의 문제를 빠르게 구조화하고, 프론트엔드·백엔드·인프라를 연결해 운영 가능한 결과로 만드는 엔지니어.
 
-## 강점
+## 핵심 강점
 - 빠른 학습과 구조화
-- 프론트엔드/백엔드/인프라를 한 흐름으로 연결
-- 재사용 가능한 자동화와 운영 구조 선호
-- 과한 설계보다 실전적인 균형 추구
+- end-to-end 실행 능력
+- 재사용 가능한 자동화와 운영 흐름 선호
+- 속도와 복잡도 통제의 균형
 
-## 병목
-- 실력 자체보다 포트폴리오와 자기설명, 신뢰 신호 부족
-- GitHub 이력은 많지만 해석된 evidence 문서가 부족
+## 어떻게 일하나
+- 문제를 먼저 구조화한다
+- 구현은 가능한 한 바로 검증 가능한 단위로 가져간다
+- 프로젝트 설명은 상황 → 판단 → 구현 → 결과 프레임으로 정리한다
 
-## 설명 프레임
-프로젝트는 가능하면 아래 구조로 설명한다.
-1. 상황
-2. 판단
-3. 구현
-4. 결과
+## 대표 evidence 축
+- 인프라 자동화
+- AI 기반 서비스/프로토타입 부트스트랩
+- agent / workflow 구조 설계
 
-## 공개/비공개 운영
-- 공개 사이트: 선별된 ontology/evidence notes
-- 내부 Obsidian vault: session/memory/brief를 포함한 전체 작업 기억
+## 현재 병목
+- 구현 역량 자체보다 포트폴리오, 자기설명, 신뢰 신호 정리가 더 큰 병목
 
-## Vault topic excerpt
-${topicBody}
-
-## Vault memory excerpt
-${memoryBody}
+## 공개 원칙
+- 공개본에는 자기설명, 협업 스타일, evidence 패턴만 남긴다
+- 내부 세션 메모와 작업 기록은 Obsidian vault에서 별도로 관리한다
 `
 }
 
-function buildReadableMarkdown(topicBody, memoryBody) {
+function buildReadableMarkdown() {
   return `# Career Ontology
 
-이 페이지는 내부 Obsidian vault에서 관리하는 온톨로지/메모를 바탕으로 만든 공개용 요약본입니다.
+이 문서는 내부 작업 메모를 그대로 공개하지 않고, 사람들에게 보여줄 자기설명 정보만 정제해서 정리한 공개용 버전입니다.
 
-## Core Positioning
-- AI를 활용해 낯선 도메인의 문제를 빠르게 구조화하고 구현까지 연결하는 실전형 엔지니어
-- 프론트엔드·백엔드·인프라를 하나의 흐름으로 연결해 운영 가능한 결과로 수렴
-- 빠른 구현만이 아니라 정확성, 구조화, 복잡도 통제를 함께 중시
+## Who I Am
+저는 AI를 활용해 낯선 도메인의 문제를 빠르게 구조화하고, 프론트엔드·백엔드·인프라를 연결해 실제 동작하는 결과로 만드는 엔지니어입니다.
 
-## Drivers
-- 성장 60 / 수익 40
-- 빠른 성장과 다양한 경험 우선
-- 실전 문제 해결 중심
+## How I Work
+- 문제를 먼저 구조화합니다.
+- 빠르게 구현하되, 운영 가능한 구조로 수렴시키는 것을 중요하게 봅니다.
+- 과한 설계보다 실전적인 균형을 선호합니다.
+- 한 번 푼 문제는 재사용 가능한 패턴으로 남기려 합니다.
+
+## What I’m Good At
+- 낯선 도메인 빠른 흡수
+- end-to-end 구현 연결
+- AI leverage를 활용한 초기 부트스트랩 가속
+- 복잡도 통제와 구조화
 
 ## Evidence Pattern
-프로젝트와 작업 기록은 가능하면 아래 구조로 설명합니다.
+프로젝트와 작업은 가능하면 아래 구조로 설명합니다.
 1. 상황
 2. 판단
 3. 구현
 4. 결과
 
-## Evidence Examples
+## Representative Examples
 - Ansible 기반 인프라 자동화
-- AI 기반 프로젝트 부트스트랩 (SSE/WebSocket/Swagger/React hook/MSW)
+- AI 기반 프로젝트 부트스트랩
 - LangGraph agent 구조 설계
 
-## Market Perception
-- 시장에서는 일반 개발자로 보이기 쉬우나 실제 강점은 AI leverage + 구조화 + end-to-end 연결 능력
-- 현재 병목은 구현 역량 부족보다 포트폴리오, 자기설명, 신뢰 신호 정리 부족에 가까움
+## Collaboration Style
+- 요구사항을 바로 코드로 옮기기보다 먼저 구조화합니다.
+- 구현, 운영, 유지보수까지 이어지는 흐름을 함께 봅니다.
+- 빠른 실행과 정확한 정리를 같이 가져가려 합니다.
 
-## Public / Private Split
-- 공개 사이트: 선별된 ontology/evidence notes
-- 내부 Obsidian vault: session/memory/brief를 포함한 전체 작업 기억
+## What I’m Looking For
+- 빠른 성장과 다양한 경험을 얻을 수 있는 환경
+- 단순 반복보다는 구조화와 문제 해결이 필요한 일
+- 제품/시스템 전체 흐름에 기여할 수 있는 역할
 
-## Vault Topic Excerpt
-${topicBody}
-
-## Vault Memory Excerpt
-${memoryBody}
+## Public Boundary
+이 문서에는 공개 가능한 포지셔닝, 협업 방식, evidence 축만 담았습니다. 내부 메모, 세션 기록, 작업용 해석 노트는 포함하지 않습니다.
 `
 }
 
 async function main() {
   const topicRaw = await readVault(path.join('03-topics', 'career-ontology.md'))
   const memoryRaw = await readVault(path.join('05-memory', 'portfolio-ontology.md'))
-  const topicBody = stripFrontmatter(topicRaw)
-  const memoryBody = stripFrontmatter(memoryRaw)
+  stripFrontmatter(topicRaw)
+  stripFrontmatter(memoryRaw)
 
   await fs.mkdir(outputDir, { recursive: true })
-  await fs.writeFile(path.join(outputDir, 'taek-career-ontology.yaml'), buildYaml(topicBody, memoryBody), 'utf8')
-  await fs.writeFile(path.join(outputDir, 'taek-career-memo.md'), buildMemo(topicBody, memoryBody), 'utf8')
-  await fs.writeFile(path.join(outputDir, 'taek-career-ontology.md'), buildReadableMarkdown(topicBody, memoryBody), 'utf8')
+  await fs.writeFile(path.join(outputDir, 'taek-career-ontology.yaml'), buildYaml(), 'utf8')
+  await fs.writeFile(path.join(outputDir, 'taek-career-memo.md'), buildMemo(), 'utf8')
+  await fs.writeFile(path.join(outputDir, 'taek-career-ontology.md'), buildReadableMarkdown(), 'utf8')
 
   console.log(`Exported curated notes from ${vaultRoot} to ${outputDir}`)
 }

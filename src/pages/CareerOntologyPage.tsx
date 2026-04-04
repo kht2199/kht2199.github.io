@@ -43,7 +43,7 @@ export function CareerOntologyPage() {
           <CardHeader>
             <Badge className="w-fit" variant="muted">Public Notes</Badge>
             <CardTitle className="text-4xl leading-tight">커리어 온톨로지</CardTitle>
-            <CardDescription className="text-base text-slate-300">내부 Obsidian vault를 source of truth로 두고, 공개 가능한 부분만 웹에서 읽기 좋게 노출한 페이지입니다.</CardDescription>
+            <CardDescription className="text-base text-slate-300">내부 작업 메모를 그대로 드러내지 않고, 사람들에게 보여줄 자기설명 정보만 정제해 공개한 페이지입니다.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {loading ? <p className="text-slate-400">노트를 불러오는 중...</p> : null}
@@ -59,13 +59,13 @@ export function CareerOntologyPage() {
             <CardHeader>
               <CardTitle className="text-lg">무엇을 보여주나</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm leading-6 text-slate-300">핵심 포지셔닝, evidence 패턴, 시장 인식, 공개/비공개 운영 원칙을 요약해서 보여줍니다.</CardContent>
+            <CardContent className="text-sm leading-6 text-slate-300">핵심 포지셔닝, 일하는 방식, 대표 evidence 축처럼 공개에 적합한 정보만 요약해서 보여줍니다.</CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="text-lg">왜 분리하나</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm leading-6 text-slate-300">웹에는 공개 가능한 해석본만 두고, 세션/메모/브리프를 포함한 전체 작업 기억은 vault에서 계속 관리합니다.</CardContent>
+            <CardContent className="text-sm leading-6 text-slate-300">내부 vault에는 작업용 메모를 유지하고, 웹에는 자기소개와 신뢰 신호로 쓸 수 있는 정제본만 분리해서 둡니다.</CardContent>
           </Card>
           <Card>
             <CardHeader>
